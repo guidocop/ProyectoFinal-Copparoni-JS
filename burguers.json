@@ -1,0 +1,65 @@
+[
+    {
+        "id" : 1,
+        "nombre" : "Maggie",
+        "precio" : 2000,
+        "descripción" : "Pan con sésamo, un medallón de carne, cebolla morada, queso dambo, lechuga y tomate",
+        "imagen" : "./assets/img1.jpg"
+    },
+    {
+        "id" : 2,
+        "nombre" : "Apu",
+        "precio" : 2500,
+        "descripción" : "Opción vegana: medallón de lentejas con berenjenas, lechuga, champiñones y mayonesa en pan de papa",
+        "imagen" :"./assets/img8.jpg"
+    },
+    {
+        "id" : 3,
+        "nombre" : "Barney Gómez",
+        "precio" : 2700,
+        "descripción" : "Pan con sésamo, medallón simple de carne, panceta, pepinos, cebolla morada, lechuga, tomate y mostaza con miel",
+        "imagen" :"./assets/img2.jpg"
+    },
+    {
+        "id" : 4,
+        "nombre" : "Marge",
+        "precio" : 2900,
+        "descripción" : "Doble medallón de carne vacuna con doble queso cheddar, lechuga, tomate y aros de cebolla",
+        "imagen" :"./assets/img3.jpg"
+    },
+    {
+        "id" : 5,
+        "nombre" : "Bart",
+        "precio" : 2800,
+        "descripción" : "Medallón simple de carne, queso cheddar, panceta, pepinillos y salsa a base de mayonesa",
+        "imagen" :"./assets/img4.jpg"
+    },
+    {
+        "id" : 6,
+        "nombre" : "Sr. Burns",
+        "precio" : 2700,
+        "descripción" : "Medallón simple de carne con queso cheddar, lechuga, tomate, cebolla morada en pan negro",
+        "imagen" :"./assets/img6.jpg"
+    },
+    {
+        "id" : 7,
+        "nombre" : "Homero",
+        "precio" : 3000,
+        "descripción" : "Doble medallón de carne, doble cheddar, doble panceta, lechuga y tomate. Nuestra doble cuarto",
+        "imagen" :"./assets/img7.jpg"
+    },
+    {
+        "id" : 8,
+        "nombre" : "Lisa",
+        "precio" : 3100,
+        "descripción" : "Doble medallón de carne, doble cheddar, lechuga, tomate y salsa a base de queso roquefort",
+        "imagen" :"./assets/img5.jpg"
+    },
+    {
+        "id" : 9,
+        "nombre" : "Krusty",
+        "precio" : 3300,
+        "descripción" : "Triple medallón de carne. triple cheddar, lechuga, tomate triturado, pepinillos y mayonesa",
+        "imagen" :"./assets/img9.jpg"
+    }
+]

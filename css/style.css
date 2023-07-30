@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+}
+header {
+    margin-bottom: 2em;    
+}
+div.botonCarrito{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-top: 2em;
+}
+div.logoTienda{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+header img {
+    width: 20em;
+    height: 20em;
+}
+header h1{
+    margin-bottom: 2em;
+    text-transform: uppercase;
+    color: #EA6032;
+}
+
+section p{
+    padding: 1.5em;
+    text-align: center;
+    font-size: 1.7rem;
+    background-color: #EA6032;
+}
+
+
+
+
+div.contenedorTarjetas {
+    margin: 1em;
+    padding: 2em 1em 2em 1em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-items:center;
+}
+div.tarjeta {
+    margin: 2em;
+    width: 350px;
+    height: 480px;
+    border: 6px solid #00957C;
+    border-radius: 1em;
+}
+div.tarjetaHeader{
+    padding: .5em;
+    border-top-left-radius: .7em;
+    border-top-right-radius: .7em;
+    background-color:  #FDE197;
+    text-align: center;
+}
+div.tarjetaBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ADB1D7;
+}
+.tarjetaBody h5{
+    margin-top: .5em;
+}
+.tarjetaBody p{
+    text-align: center;
+    padding: .5em 1em 0 1em;
+}
+div.tarjetaFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: .3em;
+    background-color: #EA6032;
+    border-bottom-left-radius: .5em;
+    border-bottom-right-radius: .5em;
+    font-size: 1.2rem;
+}
+
