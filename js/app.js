@@ -59,13 +59,13 @@ function btnAgregar(){
             carrito.push(new Item(burguer,1))
         }
         Toastify({
-            text: `El item ${burguer.nombre} se ha incorporado al carrito`,
+            text: `Hamburguesa ${burguer.nombre} agregada al carrito`,
             duration: 2000,
             gravity: "bottom",
             position: "right",
             className: "info",
             style: {
-              background: "linear-gradient(to right, #00b09b, #96c93d)",
+              background: "linear-gradient(to right, #00957C, #00b09b)",
             }
           }).showToast();
         almacenarCarrito();
@@ -83,24 +83,24 @@ function btnEliminar(){
         }
         if(carrito.length > 0) {
             Toastify({
-            text: `El item burguer ${item.producto.nombre} ha sido eliminado del carrito`,
+            text: `La hamburguesa ${item.producto.nombre} ha sido eliminada del carrito`,
             duration: 2000,
             stopOnFocus: false,
             gravity: "bottom",
             position: "right",
             style: {
-              background: "linear-gradient(to right, #00b09b, #96c93d)",
+              background: "linear-gradient(to right, #ff3f00, #EA6032)",
             }
           }).showToast();
         }else{
             Toastify({
-                text: `El carrito no contiene ningún item`,
+                text: `El carrito ha sido vaciado y no contiene ningún item`,
                 duration: 3000,
                 stopOnFocus: false,
                 gravity: "bottom",
                 position: "right",
                 style: {
-                  background: "linear-gradient(to right, #dc1a1a, #dcddece5)",
+                  background: "red",
                 }
               }).showToast();}
         almacenarCarrito();
@@ -134,13 +134,13 @@ function dibujoButtonsTabla(){
         dibujarTabla();
         offCarrito.innerHTML = '';
         Toastify({
-            text: `El carrito no contiene ningún item`,
+            text: `El carrito ha sido vaciado y no contiene ningún item`,
             duration: 3000,
             stopOnFocus: false,
             gravity: "bottom",
             position: "right",
             style: {
-              background: "linear-gradient(to right, #dc1a1a, #dcddece5)",
+              background: "red",
             }
           }).showToast();
           almacenarCarrito();
@@ -221,3 +221,9 @@ function dibujarTabla(){
    
    allEventListener();
 
+
+
+   ///me falta agregar una validacion al boton vaciar carrito (puede ser con sweetalert)
+   ///dar funcionamiento al boton confirmar compra
+   ///ordenar el código y revisar funciones
+   
