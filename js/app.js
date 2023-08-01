@@ -130,36 +130,49 @@ function dibujoButtonsTabla(){
         
     })
     offCarrito.querySelector('#vaciarCarrito').addEventListener('click', () => {
-        carrito = [];
-        dibujarTabla();
-        offCarrito.innerHTML = '';
-        Toastify({
-            text: `El carrito ha sido vaciado y no contiene ningún item`,
-            duration: 3000,
-            stopOnFocus: false,
-            gravity: "bottom",
-            position: "right",
-            style: {
-              background: "red",
+        Swal.fire({
+                    title: '¿Desea eliminar todos los items del carrito?',
+                    color: 'black',
+                    icon: 'question',
+                    iconColor : 'black',
+                    background: '#EA6032',
+                    confirmButtonText: 'Si',
+                    confirmButtonColor: 'black',
+                    showCancelButton : true,
+                    cancelButtonText : 'No',
+                    cancelButtonColor : 'black'
+        }).then((result) => {
+            if(result.isConfirmed){
+                carrito = [];
+                dibujarTabla();
+                offCarrito.innerHTML = '';
+                Swal.fire({
+                    title: 'Carrito vaciado con éxito',
+                    icon: 'success',
+                    background : 'black',
+                    color: '#00957C',
+                    confirmButtonColor : '#EA6032'
+        });
+                  almacenarCarrito();
             }
-          }).showToast();
-          almacenarCarrito();
-
+        })
     })}else{
         offCarrito.innerHTML = '';
     }
     
     
 }
+        
+
 
 function dibujarTabla(){
     if(carrito.length > 0){
         tablaHeader.innerHTML = '';
         tablaBody.innerHTML = '';
         tablaFooter.innerHTML = '';
-        tablaHeader.classList.add('text-white', 'text-center');
-        tablaBody.classList.add('text-white', 'text-center');
-        tablaFooter.classList.add('text-white', 'text-center');
+        tablaHeader.classList.add('text-warning', 'text-center');
+        tablaBody.classList.add('text-info', 'text-center');
+        tablaFooter.classList.add('text-warning', 'text-center');
         tablaHeader.innerHTML=`<tr>
         <th>Burguer</th>
         <th>Precio unitario</th>
@@ -177,7 +190,7 @@ function dibujarTabla(){
             <td id="eliminarItem-${item.producto.id}"><button class="btn"><box-icon type='solid' name='trash' color='#dc3545'></box-icon></button></td>
             </tr>`
         })
-            tablaFooter.classList.add('bg-secondary');
+            tablaFooter.classList.add('bg-dark');
             tablaFooter.innerHTML=`<tr>
             <td>TOTAL</td>
             <td></td>
@@ -223,7 +236,7 @@ function dibujarTabla(){
 
 
 
-   ///me falta agregar una validacion al boton vaciar carrito (puede ser con sweetalert)
+   ///falta
    ///dar funcionamiento al boton confirmar compra
    ///ordenar el código y revisar funciones
    

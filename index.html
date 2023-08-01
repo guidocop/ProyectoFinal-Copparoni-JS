@@ -13,16 +13,31 @@
 
   <header class="container-fluid">
     
-    <div class="botonCarrito">
+    <div class="botonCarrito sticky-top">
       <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
         <box-icon name="cart" type="solid" size="lg" color="#EA6032" flip="horizontal"></box-icon>
       </button>
     </div>
     
+    <div class="logoTienda">
+     <img src="./assets/Krusty logo.avif" class="img-fluid">
+     <h1>Tienda de hamburguesas Krusty</h1>
+  </div>
+    
+  </header>   
+
+ <main class="container-fluid">
+    
+   <section class="container">
+      <p>Seleccione la opción deseada para incorporarla al carrito de compras. Le recordamos que todas las hamburguesas de nuestro menú vienen con una porción de papas fritas de tamaño grande.</p>
+    </section>
+    
+    <div id="burguers" class="contenedorTarjetas"></div>
+
     <div class="offcanvas text-bg-dark offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
     aria-labelledby="offcanvasWithBothOptionsLabel">
     <div class="offcanvas-header">
-      <h5 class="text-uppercase offcanvas-title" id="offcanvasWithBothOptionsLabel">Carrito tienda Krusty</h5>
+      <h5 class="text-uppercase offcanvas-title tituloCarrito" id="offcanvasWithBothOptionsLabel">Carrito tienda Krusty</h5>
       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
@@ -36,23 +51,6 @@
       </div>
     </div>
    </div>
-   
-  <div class="logoTienda">
-     <img src="./assets/Krusty logo.avif" class="img-fluid">
-     <h1>Tienda de hamburguesas Krusty</h1>
-  </div>
-    
-    
-
- </header>   
-
- <main class="container-fluid">
-    
-   <section class="container">
-      <p>Seleccione la opción deseada para incorporarla al carrito de compras. Le recordamos que todas las hamburguesas de nuestro menú vienen con una porción de papas fritas de tamaño grande.</p>
-    </section>
-    
-    <div id="burguers" class="contenedorTarjetas"></div>
     
     
 
@@ -61,8 +59,11 @@
  <footer>
 
  </footer>
-    
- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>    
 <script src="./js/bootstrap.bundle.js"></script>
 <script src="./js/carrito.js"></script>

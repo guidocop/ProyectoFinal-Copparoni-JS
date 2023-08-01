@@ -32,6 +32,7 @@ header h1{
 }
 
 section p{
+    border-radius:2em ;
     padding: 1.5em;
     text-align: center;
     font-size: 1.7rem;
@@ -87,4 +88,13 @@ div.tarjetaFooter {
     border-bottom-right-radius: .5em;
     font-size: 1.2rem;
 }
+
+.tituloCarrito{
+    color:#EA6032;
+    font-size: 1.7rem;
+    border: 1px solid #EA6032;
+    padding: .5em; 
+}
+
+
 
