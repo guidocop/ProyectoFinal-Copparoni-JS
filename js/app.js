@@ -149,9 +149,10 @@ function dibujoButtonsTabla(){
                 Swal.fire({
                     title: 'Carrito vaciado con éxito',
                     icon: 'success',
-                    background : 'black',
-                    color: '#00957C',
-                    confirmButtonColor : '#EA6032'
+                    iconColor : 'black',
+                    background : '#EA6032',
+                    color: 'black',
+                    confirmButtonColor : 'black'
         });
                   almacenarCarrito();
             }
