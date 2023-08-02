@@ -1,4 +1,4 @@
-///Elementos del DOM
+
 let stockBurguers = document.getElementById('burguers');
 let tabla = document.getElementById('tabla');
 let tablaHeader = document.getElementById('tablaHeader');
@@ -11,9 +11,6 @@ let carrito = [];
 let burguers = [];
 
 
-
-
-///Primero me traigo las burguers para el array. Es una promesa
 async function traerBurguers() {
 const response = await fetch('./burguers.json');
 if (response.ok) {
