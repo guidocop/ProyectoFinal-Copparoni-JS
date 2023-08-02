@@ -96,5 +96,28 @@ div.tarjetaFooter {
     padding: .5em; 
 }
 
+.tituloRegistro {
+    color:#00957C;
+}
+
+.textoForm{
+    color:#00957C;
+    font-size: 18px;
+}
+
+.botonForm{
+    background-color: #EA6032;
+    font-size: 18px;
+    color:black;
+}
+
+.volverTienda{
+    color:#00957C;
+    font-size: 20px;
+    text-decoration: none;
+}
+.volverTienda:hover{
+    color:#EA6032;
+}
 
 

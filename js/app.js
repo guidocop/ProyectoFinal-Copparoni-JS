@@ -6,8 +6,10 @@ let tablaBody = document.getElementById('tablaBody');
 let tablaFooter = document.getElementById('tablaFooter');
 let offCarrito = document.getElementById('offCarrito');
 
+
 let carrito = [];
 let burguers = [];
+
 
 
 
@@ -83,13 +85,13 @@ function btnEliminar(){
         }
         if(carrito.length > 0) {
             Toastify({
-            text: `La hamburguesa ${item.producto.nombre} ha sido eliminada del carrito`,
-            duration: 2000,
-            stopOnFocus: false,
-            gravity: "bottom",
-            position: "right",
+                text: `La hamburguesa ${item.producto.nombre} ha sido eliminada del carrito`,
+                duration: 2000,
+                stopOnFocus: false,
+                gravity: "bottom",
+                position: "right",
             style: {
-              background: "linear-gradient(to right, #ff3f00, #EA6032)",
+                background: "linear-gradient(to right, #ff3f00, #EA6032)",
             }
           }).showToast();
         }else{
@@ -103,68 +105,17 @@ function btnEliminar(){
                   background: "red",
                 }
               }).showToast();}
-        almacenarCarrito();
+              almacenarCarrito();
         modificoTablaCarrito();
     })
     )
 }
-    
 
-
-
-function modificoTablaCarrito(){
-carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-dibujarTabla();
-dibujoButtonsTabla();
+async function cargarTarjetas(){
+await traerBurguers(); 
+crearTarjeta(); 
+btnAgregar(); 
 }
-
-function dibujoButtonsTabla(){
-    if(carrito.length > 0){
-    offCarrito.classList.add('d-flex', 'flex-row', 'justify-content-around')
-    offCarrito.innerHTML = `
-    <button id = "confirmarCompra" class = "btn btn-success mt-4">Confirmar compra</button>
-    <button id = "vaciarCarrito" class = "btn btn-danger mt-4">Vaciar el carrito</button>
-    `
-    offCarrito.querySelector('#confirmarCompra').addEventListener('click', () => {
-        console.log('hola')
-        
-    })
-    offCarrito.querySelector('#vaciarCarrito').addEventListener('click', () => {
-        Swal.fire({
-                    title: '¿Desea eliminar todos los items del carrito?',
-                    color: 'black',
-                    icon: 'question',
-                    iconColor : 'black',
-                    background: '#EA6032',
-                    confirmButtonText: 'Si',
-                    confirmButtonColor: 'black',
-                    showCancelButton : true,
-                    cancelButtonText : 'No',
-                    cancelButtonColor : 'black'
-        }).then((result) => {
-            if(result.isConfirmed){
-                carrito = [];
-                dibujarTabla();
-                offCarrito.innerHTML = '';
-                Swal.fire({
-                    title: 'Carrito vaciado con éxito',
-                    icon: 'success',
-                    iconColor : 'black',
-                    background : '#EA6032',
-                    color: 'black',
-                    confirmButtonColor : 'black'
-        });
-                  almacenarCarrito();
-            }
-        })
-    })}else{
-        offCarrito.innerHTML = '';
-    }
-    
-    
-}
-        
-
 
 function dibujarTabla(){
     if(carrito.length > 0){
@@ -200,31 +151,71 @@ function dibujarTabla(){
             <td></td>
             </tr>`
         
-        btnEliminar();
+            btnEliminar();
     }else{
         tablaHeader.innerHTML = '';
         tablaBody.innerHTML = '';
         tablaFooter.innerHTML = '';
     }
     }
-
     
+    function dibujoButtonsTabla(){
+        if(carrito.length > 0){
+            offCarrito.classList.add('d-flex', 'flex-row', 'justify-content-around')
+            offCarrito.innerHTML = `
+            <a href="./form.html"><button id = "confirmarCompra" class = "btn btn-success mt-4">Confirmar compra</button><a>
+            <button id = "vaciarCarrito" class = "btn btn-danger mt-4">Vaciar el carrito</button>
+        `
+        offCarrito.querySelector('#confirmarCompra').addEventListener('click', () => {
+    
+        })
+        offCarrito.querySelector('#vaciarCarrito').addEventListener('click', () => {
+            Swal.fire({
+                title: '¿Desea eliminar todos los items del carrito?',
+                        color: 'black',
+                        icon: 'question',
+                        iconColor : 'black',
+                        background: '#EA6032',
+                        confirmButtonText: 'Si',
+                        confirmButtonColor: 'black',
+                        showCancelButton : true,
+                        cancelButtonText : 'No',
+                        cancelButtonColor : 'black'
+            }).then((result) => {
+                if(result.isConfirmed){
+                    carrito = [];
+                    dibujarTabla();
+                    offCarrito.innerHTML = '';
+                    Swal.fire({
+                        title: 'Carrito vaciado con éxito',
+                        icon: 'success',
+                        iconColor : 'black',
+                        background : '#EA6032',
+                        color: 'black',
+                        confirmButtonColor : 'black'
+                    });
+                      almacenarCarrito();
+                }
+            })
+        })}else{
+            offCarrito.innerHTML = '';
+        }
+        
+        
+    }
+    
+    function modificoTablaCarrito(){
+    carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    dibujarTabla();
+    dibujoButtonsTabla();
+    }
     
     function almacenarCarrito(){
         localStorage.setItem('carrito', JSON.stringify(carrito));
     }
     
-    async function cargarTarjetas(){
-    await traerBurguers(); 
-    crearTarjeta(); 
-    btnAgregar(); 
-    }
     
-    /* cargarTarjetas(); */
-   
-    
-    
-   function allEventListener(){
+    function cargarDOM(){
     document.addEventListener('DOMContentLoaded', (e) => {
         e.preventDefault();
         modificoTablaCarrito();
@@ -233,11 +224,13 @@ function dibujarTabla(){
    }
 
    
-   allEventListener();
+   cargarDOM();
 
 
 
-   ///falta
-   ///dar funcionamiento al boton confirmar compra
-   ///ordenar el código y revisar funciones
+
+
+
+
+
    
